@@ -19,8 +19,10 @@ export default {
       yield put(createAction('updateState')({ login, loading: false }))
     },
     *login({ payload }, { call, put }) {
+      console.log(payload);
       yield put(createAction('updateState')({ fetching: true }))
-      const login = yield call(authService.login, payload)
+      const login = yield call(authService.login, payload);
+      console.log(login);
       if (login) {
         yield put(NavigationActions.back())
       }

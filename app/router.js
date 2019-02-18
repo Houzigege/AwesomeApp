@@ -11,12 +11,14 @@ import {
   createNavigationReducer,
 } from 'react-navigation-redux-helpers'
 import { connect } from 'react-redux'
+import {Provider} from '@ant-design/react-native'
 
 import Loading from './containers/Loading'
 import Login from './containers/Login'
 import Home from './containers/Home'
 import Account from './containers/Account'
 import Detail from './containers/Detail'
+import Security from './containers/Security'
 
 const HomeNavigator = createBottomTabNavigator({
   Home: { screen: Home },
@@ -35,6 +37,7 @@ const MainNavigator = createStackNavigator(
   {
     HomeNavigator: { screen: HomeNavigator },
     Detail: { screen: Detail },
+    Message: { screen: Security },
   },
   {
     headerMode: 'float',
@@ -126,7 +129,11 @@ class Router extends PureComponent {
     console.log(app);
     if (app.loading) return <Loading />
 
-    return <App dispatch={dispatch} state={router} />
+    return (
+        <Provider>
+          <App dispatch={dispatch} state={router} />
+        </Provider>
+    )
   }
 }
 

@@ -1,6 +1,10 @@
 import { delay } from '../utils'
+import request  from '../utils/request'
 
-export const login = async () => {
-  await delay(2000)
-  return true
-}
+export const login = (data) => {
+  return request({
+    url: '/user/getImageCode',
+    method: 'get',
+    params: data
+  })
+};

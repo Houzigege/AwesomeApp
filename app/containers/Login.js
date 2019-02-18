@@ -10,15 +10,15 @@ import { createAction, NavigationActions } from '../utils'
 class Login extends Component {
   static navigationOptions = {
     title: 'Login',
-  }
+  };
 
   onLogin = () => {
-    this.props.dispatch(createAction('app/login')())
-  }
+    this.props.dispatch(createAction('app/login')({user: 'houzi', name: 'haha'}))
+  };
 
   onClose = () => {
     this.props.dispatch(NavigationActions.back())
-  }
+  };
 
   render() {
     console.log(this.props);
