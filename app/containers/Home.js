@@ -7,6 +7,9 @@ import DottedLine from './DottedLine'
 import { Button } from '../components'
 
 import { NavigationActions } from '../utils'
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+
 
 @connect()
 class Home extends Component {
@@ -40,6 +43,16 @@ class Home extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <FontAwesome
+          name={'wpforms'}
+          size={30}
+          color={'#f00'}
+        />
+        <MaterialCommunityIcons
+          name={'face'}
+          size={30}
+          color={'#f00'}
+        />
         {/*<View>*/}
           {/*<Password*/}
             {/*maxLength={6}*/}
